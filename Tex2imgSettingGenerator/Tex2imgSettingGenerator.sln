@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28803.202
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tex2imgSettingGenerator", "Tex2imgSettingGenerator.csproj", "{F29548A2-C478-4141-B92B-D52A1D9F5ACE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F29548A2-C478-4141-B92B-D52A1D9F5ACE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F29548A2-C478-4141-B92B-D52A1D9F5ACE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F29548A2-C478-4141-B92B-D52A1D9F5ACE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F29548A2-C478-4141-B92B-D52A1D9F5ACE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EEB79B95-AAD4-4B9B-93CE-67477B3EEB20}
+	EndGlobalSection
+EndGlobal
