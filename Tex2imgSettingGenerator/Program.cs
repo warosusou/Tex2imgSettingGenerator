@@ -28,26 +28,30 @@ namespace Tex2imgSettingGenerator
             {
                 if (f.Name != SettingFileName)
                 {
-                    const string defaultSetting = @"\documentclass[fleqn,papersize,dvipdfmx]{{jarticle}}
-\usepackage{{amsmath,amssymb}}
-\usepackage{{color}}
-\pagestyle{{empty}}";
-                    const string defaultBody = @"\begin{{document}}
+                    const string defaultSetting = @"\documentclass[fleqn,papersize,dvipdfmx]{jarticle}
+\usepackage{amsmath,amssymb}
+\usepackage{color}
+\pagestyle{empty}" + "\n";
+                    string body = String.Format(@"\begin{{document}}
 \input{{{0}}}
-\end{{document}}";
+\end{{document}}",f.Name);
                     const string formatSettingFile = "formatSetting.txt";
                     var formatSetting = "";
                     if (!File.Exists(formatSettingFile))
                     {
-                        formatSetting = defaultSetting + defaultBody;
+                        formatSetting = defaultSetting + body;
                         File.WriteAllText(formatSettingFile,defaultSetting);
                     }
                     else
                     {
-                        formatSetting = File.ReadAllText(formatSettingFile) + defaultBody;
+                        formatSetting = File.ReadAllText(formatSettingFile);
+                        if (!formatSetting.EndsWith("\n"))
+                        {
+                            formatSetting += '\n';
+                        }
+                        formatSetting += body;
                     }
-                    var s = String.Format(formatSetting, f.Name);
-                    File.WriteAllText(SettingFileName, s);
+                    File.WriteAllText(SettingFileName, formatSetting);
                     var Names = new string[2];
                     Names[0] = f.Name.Substring(0, f.Name.Length - ".tex".Length) + ".png";
                     Names[1] = f.Name.Substring(0, f.Name.Length - ".tex".Length) + ".svg";
